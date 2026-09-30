@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Policybot — your policy, explained</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23165043'/%3E%3Ctext x='11' y='29' font-size='28' fill='white'%3Ep%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script>
+</head>
+<body>
+  <aside>
+    <a class="brand" href="/"><span class="logo">p<span>✦</span></span>policybot<span class="local-tag">LOCAL</span></a>
+    <div class="aside-intro"><h1>A little clarity.<br>A lot less reading.</h1><p>Turn your policy documents into a conversation.</p></div>
+    <label class="upload" id="dropzone" tabindex="0" role="button" aria-label="Upload a policy document">
+      <input id="file" type="file" accept=".pdf,.docx,.txt,.md" hidden>
+      <span class="upload-icon">↥</span><strong>Upload a policy</strong><span>Choose a file or drop it here</span><small>PDF, DOCX, TXT, MD · up to 20 MB</small>
+    </label>
+    <p id="upload-status" class="upload-status" role="status"></p>
+    <div class="library-title">YOUR POLICIES <span id="count">0</span></div>
+    <div id="documents" class="documents"></div>
+    <div class="privacy"><span>◈</span><div><strong>Your files stay with you.</strong><p>Local models. Local storage.<br>No cloud accounts or API keys.</p></div></div>
+  </aside>
+  <main>
+    <header><div><span class="eyebrow">POLICY WORKSPACE</span><div id="active-name">Choose a policy to get started</div></div><div class="header-actions"><button id="clear" class="text-button" disabled>Clear chat</button><span id="model-status" class="model-status">Checking local models…</span></div></header>
+    <div id="notice" class="notice" role="alert" hidden></div>
+    <section id="conversation" aria-label="Conversation" aria-live="polite">
+      <div id="welcome" class="welcome"><span class="welcome-mark">✦</span><span class="eyebrow">LESS SEARCHING. MORE UNDERSTANDING.</span><h2>Your policy.<br><em>In plain English.</em></h2><p>Upload a document, ask a question, and get an answer<br class="desktop-break"> grounded in what your policy actually says.</p><div class="steps"><span><b>01</b> Upload your policy</span><span><b>02</b> Ask anything about it</span><span><b>03</b> See the source</span></div></div>
+      <div id="messages"></div>
+      <div id="suggestions" class="suggestions" hidden><button>Summarize this policy</button><button>What are the key rules?</button><button>What exceptions are mentioned?</button></div>
+    </section>
+    <footer><form id="chat-form"><textarea id="question" rows="1" maxlength="2000" placeholder="Upload a policy to start asking questions…" aria-label="Your question" disabled></textarea><button id="send" type="submit" aria-label="Send question" disabled>↑</button></form><div class="footer-note"><span>Answers grounded in your document</span><span>Review the cited passages for important decisions.</span></div></footer>
+  </main>
+</body>
+</html>
